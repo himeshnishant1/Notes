@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llMainPopup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvEditNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/etEditTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Your Title."
+                android:text="Same Title"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/etEditMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="10"
+                android:inputType="textMultiLine"
+                android:hint="Enter Your Message."
+                android:text="This is a sample Text. This is a sample Text. This is a sample Text."/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:columnCount="3">
+
+                <Button
+                    android:id="@+id/btnUpdateAdd"
+                    android:layout_margin="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    android:text="Update"/>
+
+                <Button
+                    android:id="@+id/btnCancel"
+                    android:layout_margin="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    android:text="Cancel"/>
+
+                <Button
+                    android:id="@+id/btnDelete"
+                    android:layout_margin="1dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    android:text="Delete"/>
+
+            </GridLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
