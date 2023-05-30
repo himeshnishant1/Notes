@@ -47,11 +47,12 @@ public class recyclerViewAdapter extends RecyclerView.Adapter<recyclerViewAdapte
         holder.tvDate.setText(data.get(position).getNoteDateTime().toString());
         holder.tvMessage.setText(data.get(position).getNoteMessage());
         //float a = 0.0f;
-        float r = (float)(new Random().nextInt(250));
-        float g = (float)(new Random().nextInt(255));
-        float b = (float)(new Random().nextInt(250));
+        int r = new Random().nextInt(255);
+        int g = new Random().nextInt(255);
+        int b = new Random().nextInt(255);
+        String hex = String.format("#73%02x%02x%02x", r, g, b);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            holder.cvNote.setCardBackgroundColor(Color.argb(10, r, g, b));
+            holder.cvNote.setCardBackgroundColor(Color.parseColor(hex));
         }
     }
 

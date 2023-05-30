@@ -77,12 +77,13 @@ public class dbHandler extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                float r = (float)(new Random().nextInt(250));
-                float g = (float)(new Random().nextInt(255));
-                float b = (float)(new Random().nextInt(250));
+                int r = new Random().nextInt(255);
+                int g = new Random().nextInt(255);
+                int b = new Random().nextInt(255);
+                String hex = String.format("#73%02x%02x%02x", r, g, b);
                 DataModel dataModel = null;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    dataModel = new DataModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Color.rgb(r, g, b));
+                    dataModel = new DataModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Color.parseColor(hex));
                 }
                 else    dataModel = new DataModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Color.GREEN);
                 dataModels.add(dataModel);
@@ -103,11 +104,12 @@ public class dbHandler extends SQLiteOpenHelper {
 
         if(cursor.moveToFirst()){
             do{
-                float r = (float)(new Random().nextInt(5));
-                float g = (float)(new Random().nextInt(5));
-                float b = (float)(new Random().nextInt(5));
+                int r = new Random().nextInt(255);
+                int g = new Random().nextInt(255);
+                int b = new Random().nextInt(255);
+                String hex = String.format("#73%02x%02x%02x", r, g, b);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    dataModel = new DataModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Color.rgb(r, g, b));
+                    dataModel = new DataModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Color.parseColor(hex));
                 }
                 else    dataModel = new DataModel(cursor.getInt(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), Color.GREEN);
             }
